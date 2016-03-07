@@ -1,5 +1,5 @@
 //Zebrać "pokrycie kodu" za pomocą kcov
-//(opcjonalne) Zebrać pokrycie kodu za pomocą lcov
+//(opcjonalne) Zebrać pokrycie kodu za pomocą lcov + genhtml
 
 #include <iostream>
 #include <memory>
