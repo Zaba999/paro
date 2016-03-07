@@ -1,5 +1,5 @@
 //Przeanalizować wydajność za pomocą valgrind'a - valgrind--tool=callgrind --help
-//(opcjonalnie)Przeanalizować wydajność za pomocą perf'a+FlameGrapha'a - perf record -F 99 -p [PID] -g --sleep 2
+//(opcjonalnie)Przeanalizować wydajność za pomocą perf'a+FlameGrapha'a - perf record -F [sampling frequency] --call-graph=dwarf ./myapp 
 //Flamegraph do pobrania https://github.com/brendangregg/FlameGraph.git
 #include <iostream>
 #include <memory>
@@ -11,7 +11,7 @@ class BaseClass
 public:
     void fastFunction()
     {
-        for (size_t i = 0; i < 20; ++i)
+        for (size_t i = 0; i < 200; ++i)
         {
             std::cout << i << std::endl;
         }
@@ -28,7 +28,7 @@ public:
             result = 0;
         }
 
-        for (size_t i = 0; i < 300; ++i)
+        for (size_t i = 0; i < 3000; ++i)
         {
             result += i;
         }
