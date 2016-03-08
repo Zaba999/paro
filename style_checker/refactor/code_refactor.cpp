@@ -1,4 +1,4 @@
-//Poprawić kod, używając clang-refactor
+//Poprawić kod, używając clang-format
 #include <vector>
 #include <iostream>
 
